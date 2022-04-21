@@ -1,3 +1,5 @@
+import { LoginComponent } from './../login/login.component';
+import { AccountComponent } from './../account/account.component';
 import { Routes } from '@angular/router';
 
 import { ButtonsComponent } from './buttons/buttons.component';
@@ -21,6 +23,14 @@ export const MaterialRoutes: Routes = [
   {
     path: 'button',
     component: ButtonsComponent
+  },
+  {
+    path: 'account',
+    component: AccountComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'grid',
