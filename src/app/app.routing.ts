@@ -1,6 +1,9 @@
+import { HomeComponent } from './homepage/home/home.component';
+import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { AuthGuard } from './homepage/services/auth.guard';
 
 export const AppRoutes: Routes = [
   {
@@ -9,7 +12,7 @@ export const AppRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/login',
+        redirectTo: '',
         pathMatch: 'full'
       },
       {
@@ -22,5 +25,9 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       }
     ]
-  }
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
+  
 ];
