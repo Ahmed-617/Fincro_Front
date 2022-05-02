@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<div class="main-container"> 
+<div class="main-container" *ngIf="authenticated" > 
     <!-- ============================================================== -->
     <!-- Topbar - style you can find in header.scss -->
     <!-- ============================================================== -->
@@ -74,3 +74,4 @@
         <!-- ============================================================== -->
     </mat-sidenav-container>
 </div>
+<div *ngIf="!authenticated"><app-home></app-home></div>

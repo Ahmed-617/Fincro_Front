@@ -11,6 +11,7 @@ import { MenuItems } from '../../shared/menu-items/menu-items';
 })
 export class FullComponent implements OnDestroy, AfterViewInit {
   mobileQuery: MediaQueryList;
+  authenticated:boolean=!!localStorage.getItem('token');
 
   private _mobileQueryListener: () => void;
 

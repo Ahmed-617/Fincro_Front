@@ -1,3 +1,5 @@
+import { HomeComponent } from './../homepage/home/home.component';
+
 import { LoginComponent } from './../login/login.component';
 import { AccountComponent } from './../account/account.component';
 import { Routes } from '@angular/router';
@@ -23,6 +25,10 @@ export const MaterialRoutes: Routes = [
   {
     path: 'button',
     component: ButtonsComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'account',
