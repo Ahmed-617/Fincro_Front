@@ -13,6 +13,7 @@ const MENUITEMS = [
   { state: 'microcredit', name: 'Loans', type: 'link', icon: 'account_circle' },
   { state: 'addmicrocredit', name: 'Apply for Loan', type: 'link', icon: 'account_circle' },
   { state: 'mycredits', name: 'My Credits', type: 'link', icon: 'account_circle' },
+  { state: 'creditdetails', name: 'Credit Details', type: 'link', icon: 'account_circle' },
   { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },
   { state: 'grid', type: 'link', name: 'Grid List', icon: 'view_comfy' },
   { state: 'lists', type: 'link', name: 'Lists', icon: 'view_list' },
