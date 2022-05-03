@@ -14,5 +14,6 @@ export class MicroCreditComponent implements OnInit {
 
   showLoans(){
     this.opened = !this.opened;
+    
   }
 }

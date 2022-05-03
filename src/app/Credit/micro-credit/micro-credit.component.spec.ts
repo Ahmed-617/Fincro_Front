@@ -16,6 +16,7 @@ describe('MicroCreditComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MicroCreditComponent);
     component = fixture.componentInstance;
+    
     fixture.detectChanges();
   });
 

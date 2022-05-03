@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient ,HttpParams} from '@angular/common/http';
+import { HttpClientModule, HttpClient ,HttpParams,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -26,6 +26,16 @@ import { MyCreditsComponent } from './Credit/my-credits/my-credits.component';
 import { CreditComponent } from './Credit/credit/credit.component';
 import { CreditDetailsComponent } from './Credit/credit-details/credit-details.component';
 
+import { HomeComponent } from './homepage/home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { TokenInterceptorService } from './homepage/services/token-interceptor.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +49,8 @@ import { CreditDetailsComponent } from './Credit/credit-details/credit-details.c
     AddMicroCreditComponent,
     MyCreditsComponent,
     CreditComponent,
-    CreditDetailsComponent
+    CreditDetailsComponent,
+    HomeComponent  
   ],
   imports: [
     BrowserModule,
@@ -48,6 +59,13 @@ import { CreditDetailsComponent } from './Credit/credit-details/credit-details.c
     FormsModule,
     ReactiveFormsModule,
     MaterialFileInputModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgbModule,
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
@@ -56,7 +74,13 @@ import { CreditDetailsComponent } from './Credit/credit-details/credit-details.c
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
+      useClass: PathLocationStrategy,
+      
+    },
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenInterceptorService,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

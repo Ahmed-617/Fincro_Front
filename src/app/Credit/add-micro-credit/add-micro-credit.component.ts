@@ -81,6 +81,7 @@ export class AddMicroCreditComponent implements OnInit {
       payedAmount :1 ,
       amountRemaining : value.amountCredit
     }
+    
     this.service.addMicroCredit(this.credit).subscribe(
       data => {console.log(data);}
     )

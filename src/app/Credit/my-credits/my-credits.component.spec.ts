@@ -16,6 +16,7 @@ describe('MyCreditsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MyCreditsComponent);
     component = fixture.componentInstance;
+    
     fixture.detectChanges();
   });
 

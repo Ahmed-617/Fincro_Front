@@ -16,7 +16,8 @@ export class MyCreditsComponent implements OnInit {
     this.service.getMicroCredits().subscribe(
       data => {
         console.log(data);
-        this.listCredits=data;}
+        this.listCredits=data;
+      }
     )
   }
 

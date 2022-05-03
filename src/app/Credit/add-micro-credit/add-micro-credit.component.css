@@ -26755,7 +26755,7 @@ table.dataTable tbody > tr.selected
 }
 
 .fc div.fc-row
-{
+{ 
     margin-right: 0;
 
     border: 0;

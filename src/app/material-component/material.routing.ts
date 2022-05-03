@@ -1,9 +1,9 @@
 import { CreditDetailsComponent } from './../Credit/credit-details/credit-details.component';
 import { MyCreditsComponent } from './../Credit/my-credits/my-credits.component';
+import { HomeComponent } from './../homepage/home/home.component';
 import { LoginComponent } from './../login/login.component';
 import { AccountComponent } from './../account/account.component';
 import { Routes } from '@angular/router';
-
 import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent } from './grid/grid.component';
 import { ListsComponent } from './lists/lists.component';
@@ -27,6 +27,10 @@ export const MaterialRoutes: Routes = [
   {
     path: 'button',
     component: ButtonsComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'account',
