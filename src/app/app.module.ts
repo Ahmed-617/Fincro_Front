@@ -2,8 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient ,HttpParams} from '@angular/common/http';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -19,6 +19,12 @@ import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
+import { MicroCreditComponent } from './Credit/micro-credit/micro-credit.component';
+import { AddMicroCreditComponent } from './Credit/add-micro-credit/add-micro-credit.component';
+import { MaterialFileInputModule  } from 'ngx-material-file-input';
+import { MyCreditsComponent } from './Credit/my-credits/my-credits.component';
+import { CreditComponent } from './Credit/credit/credit.component';
+import { CreditDetailsComponent } from './Credit/credit-details/credit-details.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +34,20 @@ import { LoginComponent } from './login/login.component';
     SpinnerComponent,
     AppSidebarComponent,
     AccountComponent,
-    LoginComponent
+    LoginComponent,
+    MicroCreditComponent,
+    AddMicroCreditComponent,
+    MyCreditsComponent,
+    CreditComponent,
+    CreditDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
+    MaterialFileInputModule,
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
