@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credit-details.component.css']
 })
 export class CreditDetailsComponent implements OnInit {
-
+  name=localStorage.getItem('fullname');
   constructor() { }
 
   ngOnInit(): void {
