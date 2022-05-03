@@ -25,7 +25,6 @@ import { MaterialFileInputModule  } from 'ngx-material-file-input';
 import { MyCreditsComponent } from './Credit/my-credits/my-credits.component';
 import { CreditComponent } from './Credit/credit/credit.component';
 import { CreditDetailsComponent } from './Credit/credit-details/credit-details.component';
-
 import { HomeComponent } from './homepage/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
@@ -34,7 +33,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TokenInterceptorService } from './homepage/services/token-interceptor.service';
-
 
 @NgModule({
   declarations: [
