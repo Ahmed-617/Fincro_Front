@@ -33,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TokenInterceptorService } from './homepage/services/token-interceptor.service';
+import { CapacityToPayComponent } from './Credit/capacity-to-pay/capacity-to-pay.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TokenInterceptorService } from './homepage/services/token-interceptor.s
     MyCreditsComponent,
     CreditComponent,
     CreditDetailsComponent,
-    HomeComponent  
+    HomeComponent,
+    CapacityToPayComponent  
   ],
   imports: [
     BrowserModule,

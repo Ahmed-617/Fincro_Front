@@ -50,7 +50,7 @@ export const MaterialRoutes: Routes = [
     component: MyCreditsComponent
   },
   {
-    path: 'creditdetails',
+    path: 'creditdetails/:id',
     component: CreditDetailsComponent
   },
   

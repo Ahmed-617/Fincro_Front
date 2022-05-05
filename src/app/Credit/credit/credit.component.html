@@ -6,8 +6,10 @@
           <div class="col">
             <img src="../../../assets/images/microcredit.ico" alt="Image placeholder"/>
           </div>
-          <div class="col-auto">
-            <span class="badge badge-lg badge-success">{{credit.status}}</span>
+          <div class="col-auto" [ngSwitch]="credit.status">
+            <span *ngSwitchCase="'Progressing'" class="badge badge-lg badge-success">{{credit.status}}</span>
+            <span *ngSwitchCase="'ForSale'" class="badge badge-lg badge-info">{{credit.status}}</span>
+            <span *ngSwitchCase="'Closed'" class="badge badge-lg badge-danger">{{credit.status}}</span>
           </div>
         </div>
         <div class="my-4">
@@ -44,6 +46,6 @@
         </div>
       </div>
       <div class="card-footer bg-transparent text-center">
-        <a  class="text-template" router-link="creditdetails" routerLinkActive>Show Details</a>
+        <a  class="text-template" [routerLink]="['/creditDetails/',credit.idCredit]" >Show Details</a>
       </div>
     </div>

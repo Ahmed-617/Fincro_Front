@@ -37,6 +37,7 @@ user!:User;
       this.loadedUser=response;
       this.user=response;
       localStorage.setItem('fullname',this.user.lastName+" "+this.user.firstName);
+      localStorage.setItem('id',this.user.userId);
       console.log("full name :",localStorage.getItem('fullname'));
       console.log("user loaded successfully :",response);
      

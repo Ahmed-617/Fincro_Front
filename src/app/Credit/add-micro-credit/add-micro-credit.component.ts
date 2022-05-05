@@ -1,9 +1,10 @@
 import { Microcredit } from './../../Models/microcredit';
 import { MicrocreditService } from './../../Services/MicroCredit/microcredit.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { MaxSizeValidator } from '@angular-material-components/file-input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-micro-credit',
@@ -26,16 +27,22 @@ export class AddMicroCreditComponent implements OnInit {
   	varientfirstFormGroup: FormGroup=Object.create(null);
  	varientsecondFormGroup: FormGroup=Object.create(null);
 
-  credit !:Microcredit;
+  //credit !:Microcredit;
   CreditType = ""
   files !: any;
   maxSize= 16;
-	
-  constructor(private _formBuilder: FormBuilder,private service:MicrocreditService) {
+  sim !:any;
+  @Input() creditDetails = { amountCredit: 0, period: 0, typePeriod: '', startDate:'',creditType : '',cinGuarantor : '',guarantorFile : '',status : 'Progressing',amountRemaining : 0,interestRate:0,payedAmount:0}
+
+	Mensuality !: number;
+  totalAmount !: number;
+  interest !: number;
+  constructor(private _formBuilder: FormBuilder,private service:MicrocreditService,public router: Router) {
     this.fileControl = new FormControl(this.files, [
       Validators.required,
       MaxSizeValidator(this.maxSize * 1024)
     ])
+    
   }
 
 	ngOnInit() : void{
@@ -64,8 +71,28 @@ export class AddMicroCreditComponent implements OnInit {
     
 	
 	}
-  
+  addCredit(creditDetails: any) {
+    this.creditDetails.creditType = this.CreditType;
+    this.creditDetails.amountRemaining =  this.creditDetails.amountCredit;
+    this.creditDetails.interestRate =  this.interest;
+    this.creditDetails.payedAmount =  this.Mensuality;
+    this.service.addMicroCredit(this.creditDetails,1).subscribe((data: {}) => {
+      this.router.navigate(['/mycredits']);
+    });
+  }
 
+  simulation(amount:any,period:any,typePeriod:any){
+    this.service.simulation(this.creditDetails.amountCredit,this.creditDetails.period,this.creditDetails.typePeriod)
+    .subscribe((data:{})=>{
+      console.log(data);
+      this.sim = data;
+      this.Mensuality = this.sim[1].Mensuality;
+      this.totalAmount = this.Mensuality * this.creditDetails.period;
+      this.interest = this.sim[0];
+      console.log(this.sim);
+    })
+  }
+/*
   submitData(value: any) {
       this.credit = {
       idCredit : 1,
@@ -85,6 +112,6 @@ export class AddMicroCreditComponent implements OnInit {
     this.service.addMicroCredit(this.credit).subscribe(
       data => {console.log(data);}
     )
-  }
+  }*/
 
 }

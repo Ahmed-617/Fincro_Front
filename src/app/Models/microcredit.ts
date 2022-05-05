@@ -11,5 +11,6 @@ export class Microcredit {
     interestRate !: number;
     payedAmount !:number;
     amountRemaining !:number;
+    idAccount !: number;
 
 }
