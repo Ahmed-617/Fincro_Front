@@ -1,9 +1,10 @@
+import { CreditDetailsComponent } from './../Credit/credit-details/credit-details.component';
+import { MyCreditsComponent } from './../Credit/my-credits/my-credits.component';
 import { HomeComponent } from './../homepage/home/home.component';
 
 import { LoginComponent } from './../login/login.component';
 import { AccountComponent } from './../account/account.component';
 import { Routes } from '@angular/router';
-
 import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent } from './grid/grid.component';
 import { ListsComponent } from './lists/lists.component';
@@ -20,6 +21,8 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import { MicroCreditComponent } from '../Credit/micro-credit/micro-credit.component';
+import { AddMicroCreditComponent } from '../Credit/add-micro-credit/add-micro-credit.component';
 
 export const MaterialRoutes: Routes = [
   {
@@ -34,6 +37,23 @@ export const MaterialRoutes: Routes = [
     path: 'account',
     component: AccountComponent
   },
+  {
+    path: 'microcredit',
+    component: MicroCreditComponent
+  },
+  {
+    path: 'addmicrocredit',
+    component: AddMicroCreditComponent
+  },
+  {
+    path: 'mycredits',
+    component: MyCreditsComponent
+  },
+  {
+    path: 'creditdetails/:id',
+    component: CreditDetailsComponent
+  },
+  
   {
     path: 'login',
     component: LoginComponent

@@ -2,9 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient ,HttpParams,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -20,6 +19,12 @@ import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
+import { MicroCreditComponent } from './Credit/micro-credit/micro-credit.component';
+import { AddMicroCreditComponent } from './Credit/add-micro-credit/add-micro-credit.component';
+import { MaterialFileInputModule  } from 'ngx-material-file-input';
+import { MyCreditsComponent } from './Credit/my-credits/my-credits.component';
+import { CreditComponent } from './Credit/credit/credit.component';
+import { CreditDetailsComponent } from './Credit/credit-details/credit-details.component';
 import { HomeComponent } from './homepage/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
@@ -28,6 +33,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { TokenInterceptorService } from './homepage/services/token-interceptor.service';
+import { CapacityToPayComponent } from './Credit/capacity-to-pay/capacity-to-pay.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +44,21 @@ import { TokenInterceptorService } from './homepage/services/token-interceptor.s
     AppSidebarComponent,
     AccountComponent,
     LoginComponent,
+    MicroCreditComponent,
+    AddMicroCreditComponent,
+    MyCreditsComponent,
+    CreditComponent,
+    CreditDetailsComponent,
     HomeComponent,
+    CapacityToPayComponent  
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
+    MaterialFileInputModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,

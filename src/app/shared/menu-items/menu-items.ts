@@ -10,7 +10,9 @@ export interface Menu {
 const MENUITEMS = [
   { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'av_timer' },
   { state: 'account', name: 'Account', type: 'link', icon: 'account_circle' },
-  { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },
+  { state: 'microcredit', name: 'Loans', type: 'link', icon: 'note_add' },
+  { state: 'mycredits', name: 'My Credits', type: 'link', icon: 'account_balance_wallet' },
+ /* { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },
   { state: 'grid', type: 'link', name: 'Grid List', icon: 'view_comfy' },
   { state: 'lists', type: 'link', name: 'Lists', icon: 'view_list' },
   { state: 'menu', type: 'link', name: 'Menu', icon: 'view_headline' },
@@ -50,7 +52,7 @@ const MENUITEMS = [
     type: 'link',
     name: 'Slide Toggle',
     icon: 'all_inclusive'
-  }
+  }*/
 ];
 
 @Injectable()
